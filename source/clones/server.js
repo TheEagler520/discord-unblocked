@@ -1,7 +1,7 @@
-import { createBareServer } from "./node_modules/.pnpm/node_modules/@nebula-services/bare-server-node/dist/createServer.js";
+import { createBareServer } from "@nebula-services/bare-server-node";
 import { createServer } from "http";
-import Fastify from "./node_modules/.pnpm/node_modules/fastify/fastify.js";
-import fastifyStatic from "./node_modules/.pnpm/node_modules/@fastify/static/index.js";
+import Fastify from "fastify";
+import fastifyStatic from "@fastify/static";
 import { join } from "node:path";
 import rspackConfig from "./rspack.config.ts";
 import { rspack } from "@rspack/core";
