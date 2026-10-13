@@ -9,4 +9,10 @@ Create a GitHub Codespace, or download the code locally and run the following co
 $ bash scripts/init.sh
 ```
 
+### Vercel (experimental)
+
+Import this repository into Vercel from the repository root. `vercel.json` configures a Node.js function and runs the ScramJet/WASM and frontend builds during deployment; the first deployment may take a while.
+
+Vercel Hobby functions have a maximum duration of 300 seconds. Since proxy traffic uses WebSockets, active sessions may be disconnected when that limit is reached. Use a persistent WebSocket-capable host if that is unreliable.
+
 <img width="1365" height="767" alt="image" src="https://github.com/user-attachments/assets/ec0ea144-acc3-4df2-a491-7e1a364f0cf5" />

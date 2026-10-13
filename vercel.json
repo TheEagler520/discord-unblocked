@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "buildCommand": "bash scripts/vercel-build.sh",
+  "functions": {
+    "api/index.mjs": {
+      "maxDuration": 300,
+      "includeFiles": [
+        "ScramJet/assets/**",
+        "ScramJet/static/**",
+        "ScramJet/packages/core/dist/**",
+        "ScramJet/packages/controller/dist/**",
+        "ScramJet/node_modules/.pnpm/node_modules/@mercuryworkshop/libcurl-transport/dist/**"
+      ]
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index"
+    }
+  ]
+}
