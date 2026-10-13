@@ -6,13 +6,20 @@ SCRAMJET_DIR="$ROOT_DIR/ScramJet"
 CORE_DIR="$SCRAMJET_DIR/packages/core"
 REWRITER_WASM_DIR="$CORE_DIR/rewriter/wasm"
 
-if ! command -v rustc &> /dev/null; then
-    echo "Rust not installed. Installing Rust..."
+if ! command -v rustup &> /dev/null; then
+    echo "Rust toolchain manager not found. Installing Rust..."
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 fi
 
-source "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+fi
 export PATH="$HOME/.cargo/bin:$PATH"
+
+if ! command -v rustup &> /dev/null || ! command -v cargo &> /dev/null; then
+    echo "Rust installation did not provide rustup and cargo in PATH." >&2
+    exit 1
+fi
 
 if ! rustup toolchain list | grep -q '^nightly'; then
     rustup install nightly
