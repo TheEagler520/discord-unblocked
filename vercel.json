@@ -5,7 +5,7 @@
   "functions": {
     "api/index.mjs": {
       "maxDuration": 300,
-      "includeFiles": "ScramJet/{assets/**,static/**,packages/core/dist/**,packages/controller/dist/**,node_modules/.pnpm/node_modules/@mercuryworkshop/libcurl-transport/dist/**}"
+      "includeFiles": "ScramJet/{assets/**,static/**,packages/core/dist/**,packages/controller/dist/**,libcurl-dist/**}"
     }
   },
   "rewrites": [

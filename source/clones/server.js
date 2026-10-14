@@ -40,10 +40,9 @@ const fastify = Fastify({
 const serverRoot = process.env.VERCEL
     ? join(process.cwd(), "ScramJet")
     : fileURLToPath(new URL(".", import.meta.url));
-const libcurlDistPath = join(
-    serverRoot,
-    "node_modules/.pnpm/node_modules/@mercuryworkshop/libcurl-transport/dist",
-);
+const libcurlDistPath = process.env.VERCEL
+    ? join(serverRoot, "libcurl-dist")
+    : join(serverRoot, "node_modules/.pnpm/node_modules/@mercuryworkshop/libcurl-transport/dist");
 
 fastify.register(fastifyStatic, {
     root: join(serverRoot, "static"),
