@@ -8,3 +8,4 @@ bash scripts/downloader.sh
 bash scripts/install-server-deps.sh
 node source/override.js
 pnpm --dir ScramJet exec rspack build --config rspack.config.ts
+mkdir -p public

@@ -1,6 +1,7 @@
 {
   "version": 2,
   "buildCommand": "bash scripts/vercel-build.sh",
+  "outputDirectory": "public",
   "functions": {
     "api/index.mjs": {
       "maxDuration": 300,
